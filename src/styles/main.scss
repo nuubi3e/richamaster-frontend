@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+@layer components {
+  .up {
+    @apply text-up;
+  }
+
+  .down {
+    @apply text-down;
+  }
+
+  .neutral {
+    @apply text-white;
+  }
+
+  .coinList {
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .hideScrollBar {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .new-coin-inp {
+    @apply py-1 px-3 border-off-white border rounded-md outline-none bg-transparent text-white;
+  }
+
+  .piechart {
+    background-image: conic-gradient(#f9af3b 120deg, #333333 0);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 170px;
+    aspect-ratio: 1 / 1;
+    border-radius: 999px;
+    background: overlay;
+    border: 8px solid #121722;
+    background: #3e3532;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    gap: 2px;
+  }
+
+  .overlay h5 {
+    font-size: 30px;
+    color: white;
+  }
+
+  .overlay p {
+    color: #f9af3b;
+    font-size: 18px;
+  }
+
+  .coinScroll {
+    &::-webkit-scrollbar {
+      width: 10px;
+      background: #3e3532;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-off-white;
+      border-radius: 3px;
+    }
+  }
+
+  .filterCheckbox {
+    &:checked + label {
+      @apply border-yellow-light text-yellow-light;
+    }
+  }
+
+  // @keyframes moveLeftToRight {
+  //   0% {
+  //     opacity: 1;
+  //     transform: translateX(0%);
+  //   }
+  //   50% {
+  //     transform: translateX(-100%);
+  //     opacity: 1;
+  //   }
+  //   51% {
+  //     opacity: 0;
+  //   }
+  //   100% {
+  //     opacity: 0;
+  //     transform: translateX(100%);
+  //   }
+  // }
+
+  // .animate-left-right {
+  //   animation: moveLeftToRight 10s linear infinite;
+  // }
+}
